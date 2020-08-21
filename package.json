@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joaqqq/users.git"
+    "url": "https://github.com/joaqqq/users.git"
   },
   "author": "Joaquin Roman",
   "license": "ISC",
