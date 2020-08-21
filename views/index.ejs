@@ -1,10 +1,46 @@
 <%- include("partials/header") %>
 
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li id="home" class="breadcrumb-item active" aria-current="page"><h5>Home</h5></li>
+            <li id="new" class="breadcrumb-item"><a href="/users/new">New</a></li>
+        </ol>
+    </nav>
     <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">USERS</h1>
             <p class="lead">This is a simple REST API using NodeJS and MongoDB for the database</p>
         </div>
+
+        <table class="table table-responsive-md" id="userTable">
+            <caption>List of users</caption>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Show</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% user.forEach(function(users){ %>
+                <tr>
+                    <th scope="row"><%= users._id %></th>
+                    <td><%= users.name %></td>
+                    <td><%= users.email %></td>
+                    <td><%= users.username %></td>
+                    <td><a class="btn btn-primary" href="/users/<%= users._id %>">Show</a></td>
+                    <td>
+                        <form action="/users/<%= users._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
     </div>
 
 <%- include("partials/footer") %>

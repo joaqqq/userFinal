@@ -1,0 +1,50 @@
+<%- include("partials/header") %>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li id="home" class="breadcrumb-item" aria-current="page"><a href="/users">Home</a></li>
+            <li id="new" class="breadcrumb-item active">
+                <h5>Profile</h5>
+            </li>
+        </ol>
+    </nav>
+    <div class="container dflex justify-content-center">
+        <div class="jumbotron">
+            <h1 class="display-4">Displaying Data of <%= user.name %></h1>
+        </div>
+        <form>
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="name" value="<%= user.name %>">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="username" class="col-sm-2 col-form-label">Username</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="username" value="<%= user.username %>">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="userEmail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="userEmail" value="<%= user.email %>">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="userPassword" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="userPassword" value="<%= user.password %>">
+                </div>
+            </div>
+        </form>
+        <form class="form-inline">
+            <div class="form-group mb-2">
+                <a class="btn btn-success" href="/users/<%= user._id %>/edit">Update</a>
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <button class="btn btn-warning">Suspend</button>
+            </div>
+        </form>
+    </div>
+
+<%- include("partials/footer") %>

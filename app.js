@@ -27,6 +27,7 @@ app.set("view engine", "ejs");
 /* create the schema */
 const userSchema = new mongoose.Schema({
     name: String,
+    email: String,
     username: String,
     password: String,
 });
@@ -39,7 +40,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/users", function (req, res) {
-    Book.find({}, function (err, user) {
+    User.find({}, function (err, user) {
         if (err) {
             console.log(err);
         }
@@ -49,13 +50,8 @@ app.get("/users", function (req, res) {
     });
 });
 
-app.get("/users/new", function(req, res) {
-    if(err) {
-        console.log(err);
-    }
-    else {
+app.get("/users/new", function(req, res){
         res.render("new");
-    }
 });
 
 app.post("/users", function(req, res) {

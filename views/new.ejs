@@ -1,0 +1,35 @@
+<%- include("partials/header") %>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li id="home" class="breadcrumb-item" aria-current="page"><a href="/users">Home</a></li>
+            <li id="new" class="breadcrumb-item active"><h5>New</h5></li>
+        </ol>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Add USER</h1>
+        </div>
+
+        <form method="POST" action="/users">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="user[name]" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                    <input type="text" name="user[username]" class="form-control" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="userEmail">Email</label>
+                <input type="email" name="user[email]" class="form-control" id="userEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="userPassword">Password</label>
+                <input type="password" name="user[password]" class="form-control" id="userPassword" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+
+<%- include("partials/footer") %>
