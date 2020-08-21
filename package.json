@@ -1,0 +1,26 @@
+{
+  "name": "users",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaqqq/users.git"
+  },
+  "author": "Joaquin Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaqqq/users/issues"
+  },
+  "homepage": "https://github.com/joaqqq/users#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.0"
+  }
+}
